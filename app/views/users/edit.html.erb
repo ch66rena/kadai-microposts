@@ -1,12 +1,23 @@
-<h1>id: <%= @user.id %> の編集ページ</h1>
+<h1> <%= @user.name %> のprofile編集ページ</h1>
 
 <%= form_for(@user) do |f| %>
-  <%= f.label :name, '名前' %>
-  <%= f.text_field :name %>
-  <%= f.label :age, '年齢' %>
-  <%= f.text_field :age %>
 
+    <div class="form-group">
+      <%= f.label :name, 'Name' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :age, 'Age' %>
+      <%= f.text_field :age, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+  
   <%= f.submit '登録' %>
 <% end %>
 
-<%= link_to '戻る', users_path %>
+<%= link_to '戻る', (user_path(@user)) %>
