@@ -1,0 +1,12 @@
+<h1>id: <%= @user.id %> の編集ページ</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name, '名前' %>
+  <%= f.text_field :name %>
+  <%= f.label :age, '年齢' %>
+  <%= f.text_field :age %>
+
+  <%= f.submit '登録' %>
+<% end %>
+
+<%= link_to '戻る', users_path %>

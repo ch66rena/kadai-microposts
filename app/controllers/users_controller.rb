@@ -12,7 +12,23 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
 
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      flash[:success] = '編集 は正常に更新されました'
+      redirect_to @user
+    else
+      flash.now[:danger] = '編集 は更新されませんでした'
+      render :edit
+    end
+  end
+  
   def create
     @user = User.new(user_params)
 

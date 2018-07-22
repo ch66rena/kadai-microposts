@@ -9,6 +9,9 @@
       </div>
     </div>
   </aside>
+  <p><%= @user.name %></p>
+  <%= link_to 'このメッセージを編集する', edit_user_path(@user) %>
+  
   <div class="col-xs-8">
     <ul class="nav nav-tabs nav-justified">
       <li><a href="#">Microposts</a></li>
